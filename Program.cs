@@ -63,6 +63,7 @@ class Auto
 #endregion
 
 #region Arreglos
+
 //int[] numeros=new int [5];
 /*int[] numeros={10,20,30,40,50};
 
@@ -71,7 +72,7 @@ for (var i=0; i<numeros.Length; i++)
     Console.WriteLine($"Elemento {i}: {numeros[i]}");
 }*/
 
-
+/*
 using System.Security.Cryptography;
 
 /// por valor
@@ -91,7 +92,7 @@ for(int i=0;i<cantidad; i++)
     notas[i]=double.Parse(Console.ReadLine()!);
 }
 
-/*foreach(string nombre in Nombres)
+foreach(string nombre in Nombres)
 {
     Console.WriteLine(nombre);
 }
@@ -99,7 +100,7 @@ for(int i=0;i<cantidad; i++)
 foreach(double nota in notas)
 {
     Console.WriteLine(nota);
-}*/
+}
 
 double suma=0;
 for(int j = 0; j < notas.Length; j++)
@@ -108,5 +109,48 @@ for(int j = 0; j < notas.Length; j++)
 }
 
 double promedio=suma/notas.Length;
-Console.WriteLine($"El promedio de la clase es {promedio}");
+Console.WriteLine($"El promedio de la clase es {promedio}");*/
 #endregion
+
+#region listas
+using System.Collections.Generic;
+List <string> estudiantes=new List<string>();
+
+int? opcion;
+
+do
+{
+    Console.WriteLine("=================");
+    Console.WriteLine("1. Agrega Estudiante");
+    Console.WriteLine("2. Mostrar Estudiantes");
+    Console.WriteLine("3. Eliminar Estudiante");
+    Console.WriteLine("4. Cantidad de Estudiantes");
+    Console.WriteLine("5. Salir");
+    opcion=Convert.ToInt32(Console.ReadLine());
+    //opcion=Int32.Parse(Console.ReadLine());
+
+    switch (opcion)
+    {
+        case 1: Console.WriteLine("Ingrese el nombre");
+                string? nombre=(Console.ReadLine()!);
+                estudiantes.Add(nombre);
+                //estudiantes.Add(Console.ReadLine());
+                break;
+        case 2: foreach(string estudiante in estudiantes)
+            {
+                Console.WriteLine(estudiante);
+            }
+            break;
+        case 3:  Console.WriteLine("A quien desea eliminar?");
+                string? eliminado=(Console.ReadLine()!);
+                estudiantes.Remove(eliminado);
+                break;
+          case 4: Console.WriteLine($"Tenemos {estudiantes.Count} estudiantes");
+          break;  
+
+    }
+}while(opcion!=5);
+Console.WriteLine("Fin de programa");
+
+#endregion
+
