@@ -19,7 +19,6 @@ Console.WriteLine($"Mi fecha de nacimiento es: {FechaNacimiento}");
 int diferenciaDias=(FechaHoy - FechaNacimiento).Days;
 Console.WriteLine($"La diferencia en días entre hoy y mi fecha de nacimiento es: {diferenciaDias} días");   */
 
-/// por valor
 /*int edadJuan=25;
 int edadJose=30;
 
@@ -73,12 +72,17 @@ for (var i=0; i<numeros.Length; i++)
 }*/
 
 
+using System.Security.Cryptography;
+
+/// por valor
 int cantidad=0;
 Console.WriteLine("Ingrese la cantidad de estudiantes");
 cantidad=int.Parse(Console.ReadLine()!);
 
 string[]? Nombres=new string[cantidad];
 double[]? notas=new double[cantidad];
+
+
 for(int i=0;i<cantidad; i++)
 {
     Console.WriteLine("Ingrese el nombre del Estudiante");
@@ -87,7 +91,7 @@ for(int i=0;i<cantidad; i++)
     notas[i]=double.Parse(Console.ReadLine()!);
 }
 
-foreach(string nombre in Nombres)
+/*foreach(string nombre in Nombres)
 {
     Console.WriteLine(nombre);
 }
@@ -95,7 +99,7 @@ foreach(string nombre in Nombres)
 foreach(double nota in notas)
 {
     Console.WriteLine(nota);
-}
+}*/
 
 double suma=0;
 for(int j = 0; j < notas.Length; j++)

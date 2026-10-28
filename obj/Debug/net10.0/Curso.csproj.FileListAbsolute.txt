@@ -12,3 +12,4 @@ C:\Users\respin\Documents\documentos\CursoAlgoritmos\Curso\obj\Debug\net10.0\ref
 C:\Users\respin\Documents\documentos\CursoAlgoritmos\Curso\obj\Debug\net10.0\Curso.pdb
 C:\Users\respin\Documents\documentos\CursoAlgoritmos\Curso\obj\Debug\net10.0\Curso.genruntimeconfig.cache
 C:\Users\respin\Documents\documentos\CursoAlgoritmos\Curso\obj\Debug\net10.0\ref\Curso.dll
+C:\Users\respin\Documents\documentos\CursoAlgoritmos\Curso\obj\Debug\net10.0\Curso.sourcelink.json
