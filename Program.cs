@@ -113,6 +113,7 @@ Console.WriteLine($"El promedio de la clase es {promedio}");*/
 #endregion
 
 #region listas
+/*
 using System.Collections.Generic;
 List <string> estudiantes=new List<string>();
 
@@ -144,6 +145,7 @@ do
         case 3:  Console.WriteLine("A quien desea eliminar?");
                 string? eliminado=(Console.ReadLine()!);
                 estudiantes.Remove(eliminado);
+                estudiantes.
                 break;
           case 4: Console.WriteLine($"Tenemos {estudiantes.Count} estudiantes");
           break;  
@@ -151,6 +153,49 @@ do
     }
 }while(opcion!=5);
 Console.WriteLine("Fin de programa");
+*/
+#endregion
 
+#region Diccionario
+using System.Collections.Generic;
+
+Dictionary<string, string> productos=new Dictionary<string,string>();
+int? opcion;
+
+do
+{
+    Console.WriteLine("=================");
+    Console.WriteLine("1. Agrega Producto");
+    Console.WriteLine("2. Mostrar Productos");
+    Console.WriteLine("3. Eliminar Producto");
+    Console.WriteLine("4. Cantidad de Productos");
+    Console.WriteLine("5. Salir");
+    opcion=Convert.ToInt32(Console.ReadLine());
+    //opcion=Int32.Parse(Console.ReadLine());
+
+    switch (opcion)
+    {
+        case 1: Console.WriteLine("Ingrese el codigo de Producto:");
+                string? codigo=(Console.ReadLine()!);
+                Console.WriteLine("Ingrese el nombre del Producto:");
+                string nombre=(Console.ReadLine()!);
+        productos.Add(codigo,nombre);
+        break;
+        case 2: foreach(var producto in productos)
+            {
+                Console.WriteLine($"Producto Cod: {producto.Key}, Nombre: {producto.Value}");
+            }
+            break;
+        case 3: Console.WriteLine("Ingrese el codigo a eliminar");
+                string? codDelete=(Console.ReadLine()!);
+                productos.Remove(codDelete);
+                break;
+        case 4: Console.WriteLine($"Cantidad de Tipos de Productos: {productos.Count}");
+        break;
+                
+    }
+}while(opcion!=5);
+
+Console.WriteLine("Fin del Programa");
 #endregion
 
