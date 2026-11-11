@@ -157,7 +157,8 @@ Console.WriteLine("Fin de programa");
 #endregion
 
 #region Diccionario
-using System.Collections.Generic;
+/*using System.Collections.Generic;
+using System.Xml.Serialization;
 
 Dictionary<string, string> productos=new Dictionary<string,string>();
 int? opcion;
@@ -196,6 +197,83 @@ do
     }
 }while(opcion!=5);
 
-Console.WriteLine("Fin del Programa");
+Console.WriteLine("Fin del Programa");*/
 #endregion
+
+
+#region tuplas
+/*using System.Reflection.Metadata.Ecma335;
+
+var producto=( 
+    Codigo:20,
+    Nombre:"Monitor",
+    Precio:250.75m
+);
+
+Console.WriteLine($"Codigo:{producto.Codigo}");
+Console.WriteLine($"Nombre:{producto.Nombre}");
+Console.WriteLine($"Precio: {producto.Precio}");
+producto.Precio=280m;
+Console.WriteLine($"Precio: {producto.Precio}");
+
+var productoRecuperado=fnTupla();
+
+Console.WriteLine(productoRecuperado.Codigo);
+Console.WriteLine(productoRecuperado.Nombre);
+Console.WriteLine(productoRecuperado.Precio);
+
+static (int Codigo, string Nombre, decimal Precio)  fnTupla()
+{
+    return (18, "Mouse", 18.5m);
+}*/
+#endregion
+
+#region clases01
+
+Vehiculo Renault=new Vehiculo();
+Renault.Marca="Renault";
+Renault.Modelo="Duster";
+Renault.Anio=2019;
+Renault.Velocidad=0;
+for(int i = 0; i < 5; i++)
+{
+    Console.WriteLine("Cuanto quieres aumentar la velocidad en km?");
+    int aumento=Convert.ToInt32(Console.ReadLine()!);
+    Renault.Acelerar(aumento);
+
+    Renault.MostrarInfoVehiculo();
+}
+class Vehiculo
+{
+    public string? Marca {get;set;}
+    public string? Modelo {get; set;}
+    public int? Anio {get; set;}
+    public int? Velocidad {get; set;}
+
+    public Vehiculo()
+    {
+        
+    }
+    public void MostrarInfoVehiculo()
+    {
+        Console.WriteLine("============================");
+        Console.WriteLine($"Marca:{Marca}");
+        Console.WriteLine($"Modelo:{Modelo}");
+        Console.WriteLine($"Anio:{Anio}");
+        Console.WriteLine($"Velocidad:{Velocidad}");
+         Console.WriteLine("============================");
+    }
+
+    public void Acelerar(int aumento)
+    {
+        Velocidad+=aumento;
+    }
+
+}
+
+
+#endregion
+
+
+
 
