@@ -229,7 +229,7 @@ static (int Codigo, string Nombre, decimal Precio)  fnTupla()
 #endregion
 
 #region clases01
-
+/*
 Vehiculo Renault=new Vehiculo();
 Renault.Marca="Renault";
 Renault.Modelo="Duster";
@@ -261,7 +261,7 @@ class Vehiculo
         Console.WriteLine($"Modelo:{Modelo}");
         Console.WriteLine($"Anio:{Anio}");
         Console.WriteLine($"Velocidad:{Velocidad}");
-         Console.WriteLine("============================");
+        Console.WriteLine("============================");
     }
 
     public void Acelerar(int aumento)
@@ -269,6 +269,52 @@ class Vehiculo
         Velocidad+=aumento;
     }
 
+    public void Frenar(int reducir)
+    {
+        Velocidad-=reducir;
+    }
+
+}
+*/
+
+#endregion
+
+#region herencia
+
+Automovil renault=new Automovil();
+renault.Marca="Renault";
+renault.Modelo="Duster";
+renault.NumeroPuertas=5;
+
+renault.MostrarDatos();
+
+
+Moto kawasaki=new Moto();
+kawasaki.Marca="Kawasaki";
+kawasaki.Modelo="H500";
+kawasaki.Tipo="Deportiva";
+
+kawasaki.MostrarDatos();
+class Vehiculo
+{
+    public string? Marca;
+    public string? Modelo;
+    public void MostrarDatos()
+    {
+        Console.WriteLine($"Marca: {Marca}");
+        Console.WriteLine($"Modelo: {Modelo}");
+
+    }
+}
+
+class Automovil : Vehiculo
+{
+    public int? NumeroPuertas;
+}
+
+class Moto : Vehiculo
+{
+    public string? Tipo;
 }
 
 
