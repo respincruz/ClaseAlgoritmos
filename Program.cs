@@ -280,7 +280,7 @@ class Vehiculo
 #endregion
 
 #region herencia
-
+/*
 Automovil renault=new Automovil();
 renault.Marca="Renault";
 renault.Modelo="Duster";
@@ -317,8 +317,71 @@ class Moto : Vehiculo
     public string? Tipo;
 }
 
-
+*/
 #endregion
+
+#region polimorfismo
+/*
+Pago pago1=new PagoTarjeta();
+Pago pago2=new PagoEfectivo();
+Pago pago3=new PagoTransferencia();
+
+pago1.ProcesarPago();
+pago2.ProcesarPago();
+pago3.ProcesarPago();
+public class Pago
+{
+    public virtual void ProcesarPago()
+    {
+        Console.WriteLine("Procesando Pago....");
+    }
+}
+
+public class PagoTarjeta : Pago
+{
+    public override void ProcesarPago()
+    {
+        base.ProcesarPago();
+        Console.WriteLine("Procesando Pago.... Esperando Señal DataFast");
+    }
+}
+
+public class PagoEfectivo : Pago
+{
+    public override void ProcesarPago()
+    {
+        Console.WriteLine("Calculando si debo realizar/pagar el vuelto");
+    }
+}
+
+public class PagoTransferencia : Pago
+{
+    public override void ProcesarPago()
+    {
+        Console.WriteLine("Esperando señal Pago De Una");
+    }
+}*/
+#endregion
+
+#region colas
+/*using System.Collections.Generic;
+Queue<string> clientes=new Queue<string>();   // Queue<T> nombre_variable=new Queue<T>();
+
+clientes.Enqueue("Ana");
+clientes.Enqueue("Pedro");
+clientes.Enqueue("Maria");
+
+Console.WriteLine(clientes.Peek());
+ clientes.Dequeue();
+
+ Console.WriteLine(clientes.Peek());
+
+ foreach(var cliente in clientes){
+    
+    Console.WriteLine(cliente);
+}*/
+#endregion
+
 
 
 
