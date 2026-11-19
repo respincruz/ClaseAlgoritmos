@@ -403,6 +403,36 @@ foreach(string pagina in paginas)
 }*/
 #endregion
 
+#region listasenlazadas
+using System.Collections.Generic;
+LinkedList<string> canciones=new LinkedList<string>();
+
+canciones.AddLast("Imagine");
+canciones.AddLast("Bohemian Raphsody");
+canciones.AddFirst("It's My life");
+LinkedListNode<string>? nodo=canciones.Find("It's My life");
+
+canciones.AddAfter(nodo,"Eye of the tiger");
+foreach(var cancion in canciones)
+{
+    Console.WriteLine(cancion);
+}
+
+Console.WriteLine("Primera Cancion de la lista: "+canciones.First.Value);
+
+canciones.Remove("It's my life");
+
+foreach(var cancion in canciones)
+{
+    Console.WriteLine(cancion);
+}
+if(canciones.Contains("Eye of the tiger"))
+   Console.WriteLine("Si esta en el playlist");
+else
+    Console.WriteLine("No existe la cancion");
+
+#endregion
+
 
 
 
