@@ -383,6 +383,27 @@ Console.WriteLine(clientes.Peek());
 #endregion
 
 
+#region pilas
+/*using System.Collections.Generic;
+Stack<string> paginas=new Stack<string>();////Stack<T> nombre=new Stack<T>(); Donde T es el tipo de dato sea primitivo o una clase
+paginas.Push("Google");
+paginas.Push("www.elcomercio.com");
+paginas.Push("www.eluniverso.com");
+paginas.Push("www.pichincha.com");
+paginas.Push("www.dragonspace.usfq.edu.ec");
+
+Console.WriteLine(paginas.Peek());
+
+paginas.Pop();
+
+Console.WriteLine(paginas.Peek());
+foreach(string pagina in paginas)
+{
+    Console.WriteLine(pagina);
+}*/
+#endregion
+
+
 
 
 
