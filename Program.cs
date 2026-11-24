@@ -404,7 +404,7 @@ foreach(string pagina in paginas)
 #endregion
 
 #region listasenlazadas
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 LinkedList<string> canciones=new LinkedList<string>();
 
 canciones.AddLast("Imagine");
@@ -430,9 +430,143 @@ if(canciones.Contains("Eye of the tiger"))
    Console.WriteLine("Si esta en el playlist");
 else
     Console.WriteLine("No existe la cancion");
-
+*/
 #endregion
 
+#region ColaBanco
+using System.Collections.Generic;
+
+/*Cliente cliente1=new Cliente();
+cliente1.Nombre="Ruben";
+cliente1.Edad=40;
+cliente1.Saldo=5000;
+Console.WriteLine(cliente1.ToString());*/
+
+Queue<Cliente> colanormal=new Queue<Cliente>();
+Queue<Cliente> colapreferencial=new Queue<Cliente>();
+
+int opcion=0;
+do
+{
+   Console.WriteLine("==============================");
+   Console.WriteLine("Banco Galapagos USFQ");
+   Console.WriteLine("==============================");
+   Console.WriteLine("Menu de opciones");
+   Console.WriteLine("1. Ingresar cliente");
+   Console.WriteLine("2 Mostrar proximo cliente");
+   Console.WriteLine("3 Atender cliente");
+   Console.WriteLine("4 Progreso de Colas");
+   Console.WriteLine("5 Mostrar todas las colas");
+   Console.WriteLine("6 Salir");
+   Console.WriteLine("Ingresar una opcion del menu");
+   opcion=Convert.ToInt32(Console.ReadLine());
+    switch (opcion)
+    {
+        case 1: Console.WriteLine("Ingrese los nombres");
+                string nombre=Console.ReadLine();
+
+                Console.WriteLine("Ingrese la Edad:");
+                int edad=Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Ingrese su saldo:");
+                decimal saldo=Convert.ToDecimal(Console.ReadLine());
+
+                Cliente cliente=new Cliente()
+                {
+                    Nombre=nombre,
+                    Edad=edad,
+                    Saldo=saldo
+                };
+            if (edad > 65)
+            {
+                colapreferencial.Enqueue(cliente);
+                Console.WriteLine($"{cliente.Nombre} ha sido agregado a la cola preferencial");
+            }
+            else
+            {
+                colanormal.Enqueue(cliente);
+                Console.WriteLine($"{cliente.Nombre} esta en la cola normal");
+            }
+            break;
+            case 2:
+            if (colanormal.Count > 0){
+                
+                    Console.WriteLine("Proximo Cliente en cola normal");
+                    Console.WriteLine(colanormal.Peek());
+                    }
+            else
+            {
+                Console.WriteLine("No hay clientes en la cola normal");
+            }
+            if (colapreferencial.Count > 0){
+                    Console.WriteLine("Proximo cliente en cola preferencial");
+                    Console.WriteLine(colapreferencial.Peek());
+             }
+             else
+            {
+                Console.WriteLine("No hay clientes en la cola preferencial");
+            }
+            break;
+            case 3: Console.WriteLine("Punto de atencion clientes");
+                    Console.WriteLine("Que cola voy a atender?");
+                    Console.WriteLine("Normal");
+                    Console.WriteLine("Preferencial");
+                    string submenu=Console.ReadLine();
+            switch (submenu)
+            {
+                case "Normal":
+                    if (colanormal.Count > 0)
+                    {
+                        Cliente atendido=colanormal.Dequeue();
+                        Console.WriteLine($"Se atiende a {atendido.Nombre}");
+                    }
+                    else
+                        Console.WriteLine("No hay clientes en cola normal");
+                break;
+                case "Preferencial":
+                    if (colapreferencial.Count > 0)
+                    {
+                        Cliente atendido=colapreferencial.Dequeue();
+                        Console.WriteLine($"Se atiende a {atendido.Nombre}");
+                    }
+                    else
+                        Console.WriteLine("No hay clientes en cola preferencial");
+                break;
+            }
+            break;
+            case 4: Console.WriteLine("Progresos de colas");
+                    Console.WriteLine($"# de Clientes en cola normal:{colanormal.Count}");
+                    Console.WriteLine($"# de Clientes en cola preferencial:{colapreferencial.Count}");
+
+            break;
+            case 5: Console.WriteLine("Cola Normal");
+                    foreach(Cliente c in colanormal)
+                    {
+                        Console.WriteLine(c.ToString());
+                    }
+                    Console.WriteLine("Cola Preferencial");
+                    foreach(Cliente c in colapreferencial)
+                    {
+                        Console.WriteLine(c.ToString());
+                    }
+            break;
+    }
+
+}while(opcion!=6);
+class Cliente
+{
+    public string? Nombre{ get; set;}
+    public int Edad{get;set;}
+    public decimal Saldo{get; set;}
+
+    public override string ToString()
+    {
+        return $"Nombre: {Nombre} |  Edad: {Edad} | Saldo: {Saldo}";
+    }
+}
+
+
+#endregion
 
 
 
