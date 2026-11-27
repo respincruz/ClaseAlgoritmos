@@ -440,7 +440,7 @@ using System.Collections.Generic;
 cliente1.Nombre="Ruben";
 cliente1.Edad=40;
 cliente1.Saldo=5000;
-Console.WriteLine(cliente1.ToString());*/
+Console.WriteLine(cliente1.ToString());
 
 Queue<Cliente> colanormal=new Queue<Cliente>();
 Queue<Cliente> colapreferencial=new Queue<Cliente>();
@@ -565,7 +565,50 @@ class Cliente
     }
 }
 
+*/
+#endregion
 
+#region Recursivas
+/* esto no se debe realizar. La funcion recursiva no tiene una salida o condicion para salir
+void Ejemplo()
+{
+    Ejemplo();
+}
+Ejemplo();
+fin de funcion mal realizada recursiva*/
+
+static int Sumar(int n)
+{
+    if (n == 1)
+  
+        return 1;
+    
+     
+     return n+Sumar(n-1);
+}
+
+static int Factorial(int n)
+{
+    if (n==1)
+    return 1;
+
+    return n*Factorial(n-1);
+}
+
+Console.WriteLine("Ingrese un numero para calcular su serie geometrica:");
+int valor=Convert.ToInt16(Console.ReadLine()!);
+Console.WriteLine($"El factorial de {valor} es {Factorial(valor)}");
+/*
+//Console.WriteLine($"El resultado es:{Sumar(valor)}");
+if (valor > 5)
+{
+     Console.WriteLine("El numero es mayor a 5");
+    valor=valor+1;
+}
+else
+    Console.WriteLine("Es menor");
+
+Console.WriteLine(valor);*/
 #endregion
 
 
